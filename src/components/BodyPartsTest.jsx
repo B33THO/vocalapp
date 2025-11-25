@@ -3,17 +3,21 @@ import bodyParts from '../assets/BodyParts/bodyParts.js'
 import { useEffect, useState } from 'react'
 import speaker from '../helpers/speaker.js'
 import { Link } from 'react-router-dom'
+import sounds from '../helpers/Sounds.js'
 
 export default function BodyPartsTest() {
 
     const [score, setScore] = useState(0)
     const [currentPart, setCurrentPart] = useState(0)
     const [partsRandom, setPartsRandom] = useState([])
+    const [options, setOptions] = useState([])
     const [lives, setLives] = useState(5)
+    const [disableImg, setDisableImg] = useState([])
     const maxLives = 5
 
     useEffect(() => {
         createTest()
+
     }, [])
 
     useEffect(() => {
@@ -26,8 +30,16 @@ export default function BodyPartsTest() {
     useEffect(() => {
         if (partsRandom.length > 0) {
             speaker(partsRandom[0].name)
+            createOptions()
         }
     }, [partsRandom])
+
+    useEffect(() => {
+        if (partsRandom.length > 0 && currentPart < partsRandom.length) {
+            createOptions()
+        }
+    }, [currentPart])
+
 
 
     const createTest = () => {
@@ -41,16 +53,16 @@ export default function BodyPartsTest() {
     }
 
     const createOptions = () => {
-        if (partsRandom.length === 0) return []
-
-        let options = [partsRandom[currentPart]]
-        while (options.length < 5) {
+        console.log('creating options')
+        let opts = [partsRandom[currentPart]]
+        while (opts.length < 5) {
             let randomPart = bodyParts[Math.floor(Math.random() * bodyParts.length)]
-            if (!options.includes(randomPart)) {
-                options.push(randomPart)
+            if (!opts.includes(randomPart)) {
+                opts.push(randomPart)
             }
         }
-        return options.sort(() => Math.random() - 0.5)
+        setOptions(opts.sort(() => Math.random() - 0.5))
+        console.log(options)
 
     }
 
@@ -59,6 +71,7 @@ export default function BodyPartsTest() {
 
             if (partsRandom[currentPart].name == choise) {
 
+                sounds.playCorrectSound()
                 setScore(score + 1)
 
                 if (currentPart < partsRandom.length - 1) {
@@ -70,17 +83,21 @@ export default function BodyPartsTest() {
 
             } else {
                 if (lives > 0) {
+                    sounds.playErrorSound()
+                    setDisableImg([...disableImg, choise])
                     setLives(lives - 1)
                 }
             }
         }
     }
+    console.log()
 
     const reset = () => {
         setScore(0)
         setLives(maxLives)
         setCurrentPart(0)
         setPartsRandom([])
+        setDisableImg([])
         createTest()
     }
 
@@ -122,11 +139,18 @@ export default function BodyPartsTest() {
                         lives > 0 ?
                             score < partsRandom.length ?
 
-                                createOptions().map(option => {
+                                options.map(option => {
+                                    const isDisabled = disableImg.includes(option.name)
                                     return (
-                                        <div key={option.name} onClick={e => handleAnswer(e.target.name)}>
-                                            <img name={option.name} src={option.image} className='rounded-3xl w-48 h-48 transition 
-                                        duration-300 ease-in-out hover:brightness-75 hover:scale-105 cursor-pointer' />
+                                        <div key={option.name} onClick={!isDisabled ? e => handleAnswer(e.target.name) : null}>
+                                            <div className={`rounded-3xl w-48 h-48 overflow-hidden 
+                                                ${isDisabled ? 'bg-red-500 opacity-30' : ''}`}
+                                            >
+                                                <img name={option.name} src={option.image}
+                                                    className={`rounded-3xl w-48 h-48 transition duration-300 ease-in-out 
+                                                    hover:brightness-75 hover:scale-105 cursor-pointer object-cover`} />
+
+                                            </div>
                                         </div>
                                     )
                                 })
