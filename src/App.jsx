@@ -1,7 +1,8 @@
 import { Routes, Route } from 'react-router-dom'
-import BodyParts from './components/BodyParts.jsx'
 import MainMenu from './components/MainMenu.jsx'
-import BodyPartsTest from './components/BodyPartsTest.jsx'
+import BodyParts from './pages/BodyParts.jsx'
+import BodyPartsTest from './pages/BodyPartsTest.jsx'
+import Read from './pages/Read.jsx'
 
 function App() {
   
@@ -19,6 +20,7 @@ function App() {
           <Route path='/' element={<MainMenu />} />
           <Route path='/bodyparts' element={<BodyParts />} />
           <Route path='/bodypartstest' element={<BodyPartsTest />} />
+          <Route path='/read' element={<Read />} />
         </Routes>
         
       </main>

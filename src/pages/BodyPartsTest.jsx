@@ -76,6 +76,7 @@ export default function BodyPartsTest() {
 
                 if (currentPart < partsRandom.length - 1) {
                     setCurrentPart(currentPart + 1)
+                    setDisableImg([])
                 } else {
                     console.log("Test terminado")
                     // aquí puedes mostrar un mensaje final o reiniciar
