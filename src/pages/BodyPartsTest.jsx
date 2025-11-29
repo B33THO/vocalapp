@@ -17,14 +17,12 @@ export default function BodyPartsTest() {
 
     useEffect(() => {
         createTest()
-
     }, [])
 
     useEffect(() => {
         if (partsRandom.length > 0 && currentPart < partsRandom.length) {
             speaker(partsRandom[currentPart].name)
         }
-
     }, [currentPart])
 
     useEffect(() => {
@@ -53,7 +51,6 @@ export default function BodyPartsTest() {
     }
 
     const createOptions = () => {
-        console.log('creating options')
         let opts = [partsRandom[currentPart]]
         while (opts.length < 5) {
             let randomPart = bodyParts[Math.floor(Math.random() * bodyParts.length)]
@@ -62,8 +59,6 @@ export default function BodyPartsTest() {
             }
         }
         setOptions(opts.sort(() => Math.random() - 0.5))
-        console.log(options)
-
     }
 
     const handleAnswer = (choise) => {
@@ -91,7 +86,6 @@ export default function BodyPartsTest() {
             }
         }
     }
-    console.log()
 
     const reset = () => {
         setScore(0)

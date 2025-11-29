@@ -1,0 +1,52 @@
+.robot-container {
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.robot-svg {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+}
+
+.part {
+    fill: #b6b5b5;
+    stroke: #333;
+    stroke-width: 1;
+    cursor: pointer;
+    transition: fill 0.2s;
+}
+
+.part:hover {
+    fill: #90caf9;
+}
+
+.foot:hover {
+    fill: #90caf9;
+}
+
+.info-box {
+    margin-top: 10px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.footLeft {
+    width: 40px;
+    height: 20px;
+    fill: #b6b5b5;
+    cursor: pointer;
+    transition: fill 0.2s;
+    /* Define los cuatro puntos del polígono (superior-izquierdo, superior-derecho, inferior-derecho, inferior-izquierdo) */
+    clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.footRight {
+    width: 40px;
+    height: 20px;
+    fill: #b6b5b5;
+    cursor: pointer;
+    transition: fill 0.2s;
+    /* Define los cuatro puntos del polígono (superior-izquierdo, superior-derecho, inferior-derecho, inferior-izquierdo) */
+    clip-path: polygon(0% 0%, 70% 0%, 100% 100%, 0% 100%);
+}
