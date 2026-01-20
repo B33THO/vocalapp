@@ -1,8 +1,13 @@
 import speak from "../helpers/speaker";
 
-export default function Letter({letter, pronunciation, showPronunciation = true}) {
+export default function Letter({letter, pronunciation, showPronunciation = true, onClick}) {
+
     const handleClick = () => {
         speak(letter, {rate: 0.6})
+
+        if (onClick) {
+            setTimeout(() => onClick(), 1500)
+        }
     }
     return (
         <div className="flex flex-col items-center justify-center p-8 bg-white border border-gray-200 rounded-2xl 
