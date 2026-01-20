@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import bodyPartsIcon from '../assets/icons/bodypartsicon.png';
 import bodyPartsTestIcon from '../assets/icons/bodypartstesticon.png';
+import abc from '../assets/icons/abc.png';
 import playErrorSound from "../helpers/Sounds";
 
 export default function MainMenu() {
@@ -20,14 +21,18 @@ export default function MainMenu() {
                         <img src={bodyPartsTestIcon} alt="Body Parts Icon" className="mx-auto mb-4" />
                         <p>Body Parts Test</p>
                     </Link>
+                    <Link to={'/alphabet'} className="w-40 p-6 bg-slate-300 rounded-2xl shadow-md shadow-gray-900 text-center text-2xl font-semibold hover:brightness-85">
+                        <img src={abc} alt="Body Parts Icon" className="mx-auto mb-4" />
+                        <p>Alphabet</p>
+                    </Link>                   
                 </div>
+
                 <div className="flex bg-slate-300 rounded-3xl p-4 gap-4 mt-4">
                     <Link to={'/read'} className="w-40 p-6 bg-slate-300 rounded-2xl shadow-md shadow-gray-900 text-center text-2xl font-semibold hover:brightness-85">
                         <img src={bodyPartsTestIcon} alt="Body Parts Icon" className="mx-auto mb-4" />
                         <p>Lectura</p>
                     </Link>
                 </div>
-
             </div>
         </>
     )

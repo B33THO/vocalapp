@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import MainMenu from './components/MainMenu.jsx'
 import BodyParts from './pages/BodyParts.jsx'
 import BodyPartsTest from './pages/BodyPartsTest.jsx'
+import Alphabet from './pages/Alphabet.jsx'
 //import Read from './pages/Read.jsx'
 import Body from './pages/Body.jsx'
 
@@ -22,6 +23,7 @@ function App() {
           <Route path='/bodyparts' element={<BodyParts />} />
           <Route path='/bodypartstest' element={<BodyPartsTest />} />
           <Route path='/body' element={<Body />} />
+          <Route path='/alphabet' element={<Alphabet />} />
           {/* <Route path='/read' element={<Read />} /> */}
         </Routes>
 

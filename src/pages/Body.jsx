@@ -8,7 +8,7 @@ export default function Body() {
 
     const handleClick = (part) => {
         setSelectedPart(part)
-        speak(part)
+        speak(part, {rate: 0.7});   
     };
 
     return (
@@ -22,64 +22,67 @@ export default function Body() {
                     xmlns="http://www.w3.org/2000/svg"
                 >
                     {/* Cabeza */}
-                    <rect x="120" y="40" width="60" height="60" className="part" onClick={() => handleClick("Head")} />
+                    <rect x="120" y="40" width="60" height="60" className="part" onClick={() => handleClick("I have one head")} />
                     {/* Pelo */}
-                    <rect x="120" y="20" width="60" height="15" className="part" onClick={() => handleClick("Hair")} />
+                    <rect x="120" y="20" width="60" height="15" className="part" onClick={() => handleClick("I have one hair")} />
                     {/* Ojos */}
-                    <circle cx="135" cy="65" r="5" className="part" onClick={() => handleClick("eyes")} />
-                    <circle cx="165" cy="65" r="5" className="part" onClick={() => handleClick("eyes")} />
+                    <circle cx="135" cy="65" r="5" className="part" onClick={() => handleClick("I have two eyes")} />
+                    <circle cx="165" cy="65" r="5" className="part" onClick={() => handleClick("I have two eyes")} />
                     {/* Nariz */}
-                    <polygon points="150,70 145,80 155,80" className="part" onClick={() => handleClick("Nouse")} />
+                    <polygon points="150,70 145,80 155,80" className="part" onClick={() => handleClick("I have one nose")} />
                     {/* Boca */}
-                    <rect x="135" y="85" width="30" height="5" className="part" onClick={() => handleClick("Mouth")} />
+                    <rect x="135" y="85" width="30" height="5" className="part" onClick={() => handleClick("I have one mouth")} />
                     {/* Orejas */}
-                    <rect x="110" y="50" width="10" height="20" className="part" onClick={() => handleClick("Ear")} />
-                    <rect x="180" y="50" width="10" height="20" className="part" onClick={() => handleClick("Ear")} />
+                    <rect x="110" y="50" width="10" height="20" className="part" onClick={() => handleClick("I have two Ears")} />
+                    <rect x="180" y="50" width="10" height="20" className="part" onClick={() => handleClick("I have two Ears")} />
 
                     {/* Torso */}
-                    <rect x="110" y="110" width="80" height="120" rx="20" className="part" onClick={() => handleClick("Body")} />
+                    <rect x="110" y="110" width="80" height="120" rx="20" className="part" onClick={() => handleClick("I have one Body")} />
 
+                    {/* shoulders */}
+                    <rect x="65" y="102" width="35" height="15" className="part" onClick={() => handleClick("I have two Shoulders")} />
+                    <rect x="200" y="102" width="35" height="15" className="part" onClick={() => handleClick("I have two Shoulders")} />
                     {/* Brazos */}
 
-                    <rect x="70" y="120" width="30" height="60" className="part" onClick={() => handleClick("Arm")} />
-                    <circle cx="85" cy="180" r="8" className="part" onClick={() => handleClick("Elbow")} />
-                    <rect x="70" y="190" width="30" height="40" className="part" onClick={() => handleClick("Arm")} />
-                    <rect x="200" y="120" width="30" height="60" className="part" onClick={() => handleClick("Arm")} />
-                    <circle cx="215" cy="180" r="8" className="part" onClick={() => handleClick("Elbow")} />
-                    <rect x="200" y="190" width="30" height="40" className="part" onClick={() => handleClick("Arm")} />
+                    <rect x="70" y="120" width="30" height="60" className="part" onClick={() => handleClick("I have two Arms")} />
+                    <circle cx="85" cy="180" r="8" className="part" onClick={() => handleClick("I have two elbows")} />
+                    <rect x="70" y="190" width="30" height="40" className="part" onClick={() => handleClick("I have two Arms")} />
+                    <rect x="200" y="120" width="30" height="60" className="part" onClick={() => handleClick("I have two Arms")} />
+                    <circle cx="215" cy="180" r="8" className="part" onClick={() => handleClick("I have two elbows")} />
+                    <rect x="200" y="190" width="30" height="40" className="part" onClick={() => handleClick("I have two Arms")} />
 
                     {/* Manos */}
-                    <rect x="70" y="230" width="30" height="20" className="part" onClick={() => handleClick("Hand")} />
-                    <rect x="70" y="250" width="7" height="20" className="part" onClick={() => handleClick("Fingers")} />
-                    <rect x="82" y="250" width="7" height="20" className="part" onClick={() => handleClick("Fingers")} />
-                    <rect x="93" y="250" width="7" height="20" className="part" onClick={() => handleClick("Fingers")} />
+                    <rect x="70" y="230" width="30" height="20" className="part" onClick={() => handleClick("I have two Hands")} />
+                    <rect x="70" y="250" width="7" height="20" className="part" onClick={() => handleClick("I have ten Fingers")} />
+                    <rect x="82" y="250" width="7" height="20" className="part" onClick={() => handleClick("I have ten Fingers")} />
+                    <rect x="93" y="250" width="7" height="20" className="part" onClick={() => handleClick("I have ten Fingers")} />
 
-                    <rect x="200" y="230" width="30" height="20" className="part" onClick={() => handleClick("Hand")} />
-                    <rect x="200" y="250" width="7" height="20" className="part" onClick={() => handleClick("Fingers")} />
-                    <rect x="212" y="250" width="7" height="20" className="part" onClick={() => handleClick("Fingers")} />
-                    <rect x="223" y="250" width="7" height="20" className="part" onClick={() => handleClick("Fingers")} />
+                    <rect x="200" y="230" width="30" height="20" className="part" onClick={() => handleClick("I have two Hands")} />
+                    <rect x="200" y="250" width="7" height="20" className="part" onClick={() => handleClick("I have ten Fingers")} />
+                    <rect x="212" y="250" width="7" height="20" className="part" onClick={() => handleClick("I have ten Fingers")} />
+                    <rect x="223" y="250" width="7" height="20" className="part" onClick={() => handleClick("I have ten Fingers")} />
 
                     {/* Piernas */}
-                    <rect x="120" y="240" width="20" height="60" className="part" onClick={() => handleClick("Legs")} />
-                    <circle cx="130" cy="300" r="8" className="part" onClick={() => handleClick("Knee")} />
-                    <rect x="120" y="310" width="20" height="50" className="part" onClick={() => handleClick("Legs")} />
-                    <rect x="160" y="240" width="20" height="60" className="part" onClick={() => handleClick("Legs")} />
-                    <circle cx="170" cy="300" r="8" className="part" onClick={() => handleClick("Knee")} />
-                    <rect x="160" y="310" width="20" height="50" className="part" onClick={() => handleClick("Legs")} />
+                    <rect x="120" y="240" width="20" height="60" className="part" onClick={() => handleClick("I have two Legs")} />
+                    <circle cx="130" cy="300" r="8" className="part" onClick={() => handleClick("I have two Knees")} />
+                    <rect x="120" y="310" width="20" height="50" className="part" onClick={() => handleClick("I have two Legs")} />
+                    <rect x="160" y="240" width="20" height="60" className="part" onClick={() => handleClick("I have two Legs")} />
+                    <circle cx="170" cy="300" r="8" className="part" onClick={() => handleClick("I have two Knees")} />
+                    <rect x="160" y="310" width="20" height="50" className="part" onClick={() => handleClick("I have two Legs")} />
 
                     {/* Pies */}
-                    <rect x="100" y="362" width="40" height="20" className="footLeft" onClick={() => handleClick("Foot")} />
-                    <rect x="160" y="362" width="40" height="20" className="footRight" onClick={() => handleClick("Foot")} />
+                    <rect x="100" y="362" width="40" height="20" className="footLeft" onClick={() => handleClick("I have two feet")} />
+                    <rect x="160" y="362" width="40" height="20" className="footRight" onClick={() => handleClick("I have two feet")} />
 
-                    <circle cx="135" cy="390" r="5" className="part" onClick={() => handleClick("Toes")} />
-                    <circle cx="123" cy="390" r="4" className="part" onClick={() => handleClick("Toes")} />
-                    <circle cx="113" cy="390" r="4" className="part" onClick={() => handleClick("Toes")} />
-                    <circle cx="104" cy="390" r="3" className="part" onClick={() => handleClick("Toes")} />
+                    <circle cx="135" cy="390" r="5" className="part" onClick={() => handleClick("I have ten Toes")} />
+                    <circle cx="123" cy="390" r="4" className="part" onClick={() => handleClick("I have ten Toes")} />
+                    <circle cx="113" cy="390" r="4" className="part" onClick={() => handleClick("I have ten Toes")} />
+                    <circle cx="104" cy="390" r="3" className="part" onClick={() => handleClick("I have ten Toes")} />
 
-                    <circle cx="165" cy="390" r="5" className="part" onClick={() => handleClick("Toes")} />
-                    <circle cx="175" cy="390" r="4" className="part" onClick={() => handleClick("Toes")} />
-                    <circle cx="185" cy="390" r="4" className="part" onClick={() => handleClick("Toes")} />
-                    <circle cx="195" cy="390" r="3" className="part" onClick={() => handleClick("Toes")} />
+                    <circle cx="165" cy="390" r="5" className="part" onClick={() => handleClick("I have ten Toes")} />
+                    <circle cx="175" cy="390" r="4" className="part" onClick={() => handleClick("I have ten Toes")} />
+                    <circle cx="185" cy="390" r="4" className="part" onClick={() => handleClick("I have ten Toes")} />
+                    <circle cx="195" cy="390" r="3" className="part" onClick={() => handleClick("I have ten Toes")} />
                 </svg>
 
                 {selectedPart && (
