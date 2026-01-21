@@ -4,6 +4,7 @@ import BodyParts from './pages/BodyParts.jsx'
 import BodyPartsTest from './pages/BodyPartsTest.jsx'
 import Alphabet from './pages/Alphabet.jsx'
 import AlphabetPractice from './pages/AlphabetPractice.jsx'
+import Spelling from './pages/Spelling.jsx'
 //import Read from './pages/Read.jsx'
 import Body from './pages/Body.jsx'
 
@@ -26,6 +27,7 @@ function App() {
           <Route path='/body' element={<Body />} />
           <Route path='/alphabet' element={<Alphabet />} />
           <Route path='/alphabetpractice' element={<AlphabetPractice />} />
+          <Route path='/spelling' element={<Spelling />} />
           {/* <Route path='/read' element={<Read />} /> */}
         </Routes>
 

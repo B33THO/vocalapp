@@ -1,3 +1,7 @@
 export { default as BodyParts } from './BodyParts'
 export { default as BodyPartsTest } from './BodyPartsTest'
 export { default as Read } from './Read'
+export { default as Alphabet } from './Alphabet'
+export { default as AlphabetPractice } from './AlphabetPractice'
+export { default as Spelling } from './Spelling'
+export { default as Body } from './Body'

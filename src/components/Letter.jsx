@@ -14,7 +14,7 @@ export default function Letter({letter, pronunciation, showPronunciation = true,
         shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:shadow-sky-300 w-40 h-52 cursor-pointer"
         onClick={handleClick}>
             {/* Letra Grande */}
-            <span className="text-7xl font-bold text-indigo-600 mb-4 uppercase">
+            <span className="text-7xl font-bold text-indigo-600 mb-4 uppercase font-serif">
             {letter}
             </span>
             
