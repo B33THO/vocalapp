@@ -26,7 +26,7 @@ export default function Letter({letter, pronunciation, showPronunciation = true,
                 showPronunciation ?
                 (
                     <p className="text-lg font-medium text-gray-500 italic">
-                    " {pronunciation} "
+                    "{pronunciation} "
                     </p>
 
                 ):
